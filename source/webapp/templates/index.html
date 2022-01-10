@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% block nav %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'create_product' %}">Добавить продукт</a>
+    </li>
+{% endblock %}
 {% block content %}
 <div class="container">
     <h1 class="text-center mt-5">Продукты</h1>
@@ -10,11 +15,12 @@
             <div class="card-body">
                 <a href="{% url 'product_view' product.pk %}" class=""><h5 class="card-title">{{ product.name }}</h5></a>
                 <p class="card-text">{{ product.category }}</p>
+                <a href="{% url 'delete_product' product.pk %}">Удалить</a>
+                <a href="{% url 'update_product' product.pk %}">Редактировать</a>
             </div>
             <div class="card-footer">
                 <p class="card-text">{{ product.price }}</p>
             </div>
-
         </div>
     {% endfor %}
     </div>

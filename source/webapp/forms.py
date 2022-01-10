@@ -8,3 +8,9 @@ class ProductForm(forms.Form):
     category = forms.ChoiceField(choices=CATEGORY, required=True, label='Категория')
     remainder = forms.IntegerField(min_value=0, required=True, label='Остаток')
     price = forms.DecimalField(max_digits=7, decimal_places=2, required=True, label='Цена')
+
+class DeleteProductForm(forms.Form):
+    name = forms.CharField(max_length=100,
+                            required=True,
+                            label="Название",
+                            error_messages={"required": "Поле обязательно для заполнения"})
