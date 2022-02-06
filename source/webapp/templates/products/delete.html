@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <form action="{% url "delete_product" product.pk %}" method="POST">
+    <form action="{% url "product_delete" product.pk %}" method="POST">
     {% csrf_token %}
         <h2>Вы действительно хотите удалить продукт {{ product.name }}</h2>
         <p>Введите название продукта который вы хотите удалить</p>
         {% include "partial/form.html" with button_text="Удалить" %}
     </form>
-    <a class="btn btn-dark mt-3" href="{% url "home_page"%}">Нет</a>
+    <a class="btn btn-dark mt-3" href="{% url "product_index"%}">Нет</a>
 {% endblock %}
