@@ -25,10 +25,12 @@
             <div class="card-body">
                 <a href="{% url 'product_view' product.pk %}" class=""><h5 class="card-title">{{ product.name }}</h5></a>
                 <p class="card-text">{{ product.get_category_display }}</p>
+
                 <a class="btn btn-secondary" href="{% url 'product_delete' product.pk %}">Удалить</a>
                 <a class="btn btn-secondary" href="{% url 'product_update' product.pk %}">Редактировать</a>
                 <form method="post" action="{% url 'product_add' product.pk%}" >
                     {% csrf_token %}
+
                     <button class="btn btn-secondary mt-2">Добавить в корзину</button>
                 </form>
             </div>

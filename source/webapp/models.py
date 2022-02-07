@@ -47,12 +47,13 @@ class Order(models.Model):
     date = models.DateTimeField(auto_now_add=True, verbose_name='Дата заказа')
 
     def __str__(self):
-        return f'{self.name}'
+        return f'ID {self.pk}. Дата: {self.date.date()} * Имя: {self.name} * Телефон: {self.phone} * Адрес: {self.address}'
 
     class Meta:
         db_table = 'Order'
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'
+        ordering = ['-date']
 
 class OrderBasketProduct(models.Model):
     order = models.ForeignKey('webapp.Order', on_delete=models.CASCADE, related_name='orderbasket', verbose_name='Заказ')
@@ -60,7 +61,7 @@ class OrderBasketProduct(models.Model):
     amount = models.PositiveIntegerField(null=False, blank=False, verbose_name='Количество')
 
     def __str__(self):
-        return f'Заказ от: {self.order}, '
+        return f'{self.order} {self.product} {self.amount}'
 
     class Meta:
         db_table = 'ORDERBASKET'
