@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
 
 from webapp.forms import OrderBasketForm
-from webapp.models import Product, Basket, Order
+from webapp.models import Product, Basket, Order, OrderBasketProduct
 
 
 class BasketView(View):
@@ -16,16 +16,17 @@ class BasketView(View):
 
     def post(self, request, *args, **kwargs):
         products_basket = Basket.objects.all()
-        print(f'products_basket: {products_basket}')
         name = request.POST.get('name')
         address = request.POST.get('address')
         phone = request.POST.get('phone')
         order = Order.objects.create(name=name, phone=phone, address=address)
-        for product in products_basket:
-            print(product)
-            # order.products.create(product_id=product.pk, amount=product.amount)
-        print(f'order.product: {order.products}')
-        return redirect('product_index')
+        for basket in products_basket:
+            product = Product.objects.get(pk=basket.product.pk)
+            OrderBasketProduct.objects.create(product_id=product.pk, amount=basket.amount, order=order)
+            product.remainder -= basket.amount
+            product.save()
+            basket.delete()
+        return render(request, 'basket/thank.html')
 
 class ProductAddBasket(View):
     def post(self, request, *args, **kwargs):
@@ -45,6 +46,5 @@ class ProductAddBasket(View):
 class BasketProductDelete(View):
     def get(self, request, *args, **kwargs):
         product = get_object_or_404(Basket, pk=kwargs.get('pk'))
-        print(product)
         product.delete()
         return redirect('basket')

@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import View
 from django.views.generic import CreateView, DetailView, DeleteView, UpdateView
 
-from webapp.models import Product, Basket
-from webapp.forms import ProductForm, DeleteProductForm
+from webapp.models import Product
+from webapp.forms import ProductForm
 from webapp.views.base import SearchView
 
 
@@ -17,7 +17,9 @@ class ProductIndexView(SearchView):
     ordering = 'name'
 
     def get_queryset(self):
-        return Product.objects.filter(remainder__gt=0)
+        queryset = super().get_queryset()
+        queryset = queryset.exclude(remainder=0)
+        return queryset.order_by('name', 'category')
 
 
 

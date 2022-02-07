@@ -14,5 +14,4 @@ urlpatterns = [
     path('product/<int:pk>/add', ProductAddBasket.as_view(), name='product_add'),
     path('products/basket', BasketView.as_view(), name='basket'),
     path('products/basket/delete/<int:pk>', BasketProductDelete.as_view(), name='basket_delete'),
-
 ]

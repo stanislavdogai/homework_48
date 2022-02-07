@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from webapp.models import Product, Basket, Order
+from webapp.models import Product, Basket, Order, OrderBasketProduct
 
 #
 # class ProductAdmin(admin.ModelAdmin):
@@ -13,3 +13,4 @@ from webapp.models import Product, Basket, Order
 admin.site.register(Product)
 admin.site.register(Basket)
 admin.site.register(Order)
+admin.site.register(OrderBasketProduct)

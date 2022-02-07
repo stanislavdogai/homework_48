@@ -38,17 +38,32 @@ class Basket(models.Model):
         return self.amount * self.product.price
 
 
+
+
 class Order(models.Model):
     name = models.CharField(max_length=100, null=False, blank=False, verbose_name='Имя')
     phone = models.CharField(max_length=15, null=False, blank=False, verbose_name='Номер телефона')
     address = models.CharField(max_length=50, null=False, blank=False, verbose_name='Адрес')
-    products = models.ManyToManyField('webapp.Basket', related_name='orders')
     date = models.DateTimeField(auto_now_add=True, verbose_name='Дата заказа')
 
     def __str__(self):
-        return f'{self.pk} --- {self.name}'
+        return f'{self.name}'
 
     class Meta:
         db_table = 'Order'
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'
+
+class OrderBasketProduct(models.Model):
+    order = models.ForeignKey('webapp.Order', on_delete=models.CASCADE, related_name='orderbasket', verbose_name='Заказ')
+    product = models.ForeignKey('webapp.Product', on_delete=models.PROTECT, related_name='productbasket', verbose_name='Продукт')
+    amount = models.PositiveIntegerField(null=False, blank=False, verbose_name='Количество')
+
+    def __str__(self):
+        return f'Заказ от: {self.order}, '
+
+    class Meta:
+        db_table = 'ORDERBASKET'
+        verbose_name = 'Промежуточная'
+        verbose_name_plural = 'Промежуточная'
+
