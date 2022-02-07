@@ -46,6 +46,16 @@ class ProductAddBasket(View):
 
 class BasketProductDelete(View):
     def get(self, request, *args, **kwargs):
-        product = get_object_or_404(Basket, pk=kwargs.get('pk'))
-        product.delete()
+        basket = get_object_or_404(Basket, pk=kwargs.get('pk'))
+        if basket.amount > 1:
+            basket.amount -= 1
+            basket.save()
+        else:
+            basket.delete()
+        return redirect('basket')
+
+class BasketProductRemove(View):
+    def get(self, request, *args, **kwargs):
+        basket = get_object_or_404(Basket, pk=kwargs.get('pk'))
+        basket.delete()
         return redirect('basket')

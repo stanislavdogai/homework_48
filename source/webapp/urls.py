@@ -1,6 +1,7 @@
 from django.urls import path
 
-from webapp.views.basket import (BasketView, ProductAddBasket, BasketProductDelete)
+from webapp.views.basket import (BasketView, ProductAddBasket, BasketProductDelete,
+                                 BasketProductRemove)
 from webapp.views.products import (ProductIndexView, ProductCreateView, ProductDetailView,
                                    ProductDeleteView, ProductUpdateView, ProductBusketView)
 
@@ -14,4 +15,5 @@ urlpatterns = [
     path('product/<int:pk>/add', ProductAddBasket.as_view(), name='product_add'),
     path('products/basket', BasketView.as_view(), name='basket'),
     path('products/basket/delete/<int:pk>', BasketProductDelete.as_view(), name='basket_delete'),
+    path('products/basket/remove/<int:pk>', BasketProductRemove.as_view(),name='basket_remove'),
 ]

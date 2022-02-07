@@ -18,6 +18,7 @@
             <td>{{ product.amount }}</td>
             <td>{{ product.sum_product }}</td>
             <td><a href="{% url 'basket_delete' product.pk %}"><i class="fas fa-trash-alt"></i></a></td>
+            <td><a href="{% url 'basket_remove' product.pk %}"><i class="fas fa-times-circle"></i></a></td>
         </tr>
     {% endfor %}
   </tbody>

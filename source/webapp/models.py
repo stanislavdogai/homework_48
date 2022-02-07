@@ -61,7 +61,7 @@ class OrderBasketProduct(models.Model):
     amount = models.PositiveIntegerField(null=False, blank=False, verbose_name='Количество')
 
     def __str__(self):
-        return f'{self.order} {self.product} {self.amount}'
+        return f'Заказ: {self.order}  *  Продукт: {self.product.name}  *  Количество: {self.amount}'
 
     class Meta:
         db_table = 'ORDERBASKET'
