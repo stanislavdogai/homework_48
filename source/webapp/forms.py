@@ -1,6 +1,6 @@
 from django import forms
 
-from webapp.models import CATEGORY, Product
+from webapp.models import CATEGORY, Product, Order
 
 
 # class ProductForm(forms.Form):
@@ -20,6 +20,13 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         exclude = []
+
+
+class OrderBasketForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        exclude = []
+        fields = ('name', 'address', 'phone')
 
 class SearchForm(forms.Form):
     search = forms.CharField(max_length=50, required=False, label="Найти")

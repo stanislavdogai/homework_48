@@ -12,19 +12,13 @@ class ProductIndexView(SearchView):
     model = Product
     context_object_name = 'products'
     template_name = 'products/index.html'
-    paginate_by = 5
+    paginate_by = 6
     search_fields = ['name__icontains']
     ordering = 'name'
 
-    def get(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
+    def get_queryset(self):
+        return Product.objects.filter(remainder__gt=0)
 
-    # def post(self, request, *args, **kwargs):
-    #     print('POST work')
-    #     print(request)
-    #     print(args)
-    #     print(kwargs)
-    #     return render(request, 'products/index.html', {})
 
 
 class ProductCreateView(CreateView):

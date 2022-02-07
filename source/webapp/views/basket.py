@@ -1,26 +1,45 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.views import View
 
-from webapp.models import Product, Basket
+from webapp.forms import OrderBasketForm
+from webapp.models import Product, Basket, Order
 
 
 class BasketView(View):
     def get(self, request, *args, **kwargs):
-        basket = Basket.objects.all()
-        return render(request, 'basket/index.html', {'basket':basket})
+        basket = Basket.objects.filter(product__remainder__gt=0)
+        form = OrderBasketForm()
+        sum = 0
+        for price in basket:
+            sum += (price.product.price * price.amount)
+        return render(request, 'basket/index.html', {'basket':basket, 'form':form, 'sum':sum})
+
+    def post(self, request, *args, **kwargs):
+        products_basket = Basket.objects.all()
+        print(f'products_basket: {products_basket}')
+        name = request.POST.get('name')
+        address = request.POST.get('address')
+        phone = request.POST.get('phone')
+        order = Order.objects.create(name=name, phone=phone, address=address)
+        for product in products_basket:
+            print(product)
+            # order.products.create(product_id=product.pk, amount=product.amount)
+        print(f'order.product: {order.products}')
+        return redirect('product_index')
 
 class ProductAddBasket(View):
     def post(self, request, *args, **kwargs):
         product = Product.objects.get(pk=kwargs.get('pk'))
-        print(product)
-        # basket = get_object_or_404(Basket, product_id=kwargs.get('pk'))
-        # print(basket)
-        Basket.objects.create(product=product, amount=1)
-        # basket = basket.amount + 1
-        # print(f'amount = {basket}')
-        # check = Basket.objects.update()
-        # print(check)
-        # print(basket.product, basket.amount)
+        if Basket.objects.filter(product_id=product.pk):
+            basket = Basket.objects.get(product_id=product.pk)
+            if product.remainder == basket.amount:
+                return render(request, 'basket/error.html')
+            else:
+                basket = Basket.objects.get(product_id=product.pk)
+                basket.amount += 1
+                basket.save()
+        else:
+            Basket.objects.create(product=product, amount=1)
         return redirect('product_index')
 
 class BasketProductDelete(View):

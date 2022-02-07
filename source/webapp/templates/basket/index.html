@@ -16,10 +16,14 @@
             <th scope="row">{{ product.product.name }}</th>
             <td>{{ product.product.price }}</td>
             <td>{{ product.amount }}</td>
-            <td>{{ total }}</td>
+            <td>{{ product.sum_product }}</td>
             <td><a href="{% url 'basket_delete' product.pk %}"><i class="fas fa-trash-alt"></i></a></td>
         </tr>
     {% endfor %}
   </tbody>
 </table>
+    <h2 class="text-center">Общая сумма заказа составила {{ sum }}</h2>
+    <form method="POST">
+        {% include 'partial/form.html' with button_text='Оформить заказ' %}
+    </form>
 {% endblock %}

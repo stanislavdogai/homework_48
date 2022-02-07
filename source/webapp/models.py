@@ -26,9 +26,29 @@ class Basket(models.Model):
     amount = models.PositiveIntegerField(null=False, blank=False, verbose_name='Количество')
 
     def __str__(self):
-        return f'{self.product}{self.amount}'
+        return f'{self.product} --- {self.amount}'
 
     class Meta:
         db_table = 'Basket'
         verbose_name = 'Корзина'
         verbose_name_plural = 'Корзины'
+
+    @property
+    def sum_product(self):
+        return self.amount * self.product.price
+
+
+class Order(models.Model):
+    name = models.CharField(max_length=100, null=False, blank=False, verbose_name='Имя')
+    phone = models.CharField(max_length=15, null=False, blank=False, verbose_name='Номер телефона')
+    address = models.CharField(max_length=50, null=False, blank=False, verbose_name='Адрес')
+    products = models.ManyToManyField('webapp.Basket', related_name='orders')
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Дата заказа')
+
+    def __str__(self):
+        return f'{self.pk} --- {self.name}'
+
+    class Meta:
+        db_table = 'Order'
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
