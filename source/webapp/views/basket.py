@@ -30,6 +30,7 @@ class BasketView(View):
 
 class ProductAddBasket(View):
     def post(self, request, *args, **kwargs):
+        count = request.POST.get('quantity')
         product = Product.objects.get(pk=kwargs.get('pk'))
         if Basket.objects.filter(product_id=product.pk):
             basket = Basket.objects.get(product_id=product.pk)
@@ -37,7 +38,7 @@ class ProductAddBasket(View):
                 return render(request, 'basket/error.html')
             else:
                 basket = Basket.objects.get(product_id=product.pk)
-                basket.amount += 1
+                basket.amount += int(count)
                 basket.save()
         else:
             Basket.objects.create(product=product, amount=1)

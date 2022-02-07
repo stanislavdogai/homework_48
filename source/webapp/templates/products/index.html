@@ -28,11 +28,15 @@
 
                 <a class="btn btn-secondary" href="{% url 'product_delete' product.pk %}">Удалить</a>
                 <a class="btn btn-secondary" href="{% url 'product_update' product.pk %}">Редактировать</a>
-                <form method="post" action="{% url 'product_add' product.pk%}" >
+                <p class="mt2">
+                <form method="post" action="{% url 'product_add' product.pk%}" name="count">
                     {% csrf_token %}
-
-                    <button class="btn btn-secondary mt-2">Добавить в корзину</button>
+                    <label for="quantity">Выберите количество:</label>
+                    <input type="number" id="quantity" name="quantity" min="1">
+                    <button class="btn btn-secondary" type="submit">Принять</button>
+{#                    <button class="btn btn-secondary mt-2">Добавить в корзину</button>#}
                 </form>
+                </p>
             </div>
             <div class="card-footer">
                 <p class="card-text">Цена: {{ product.price }}</p>
