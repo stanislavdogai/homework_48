@@ -1,7 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from webapp.models import Product
+from webapp.models import Product, Basket
+
 #
 # class ProductAdmin(admin.ModelAdmin):
 #     list_display = ['id', 'name']
@@ -10,3 +11,4 @@ from webapp.models import Product
 
 
 admin.site.register(Product)
+admin.site.register(Basket)

@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.views.generic import ListView
 
 from webapp.forms import SearchForm

@@ -3,6 +3,9 @@
     <li class="nav-item">
         <a class="nav-link" href="{% url 'product_create' %}">Добавить продукт</a>
     </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'basket' %}">Просмотреть корзину</a>
+    </li>
 {% endblock %}
 {% block content %}
     <div class="mt3">
@@ -15,20 +18,30 @@
     <h1 class="text-center mt-5">Продукты</h1>
 </div>
 <div class="container">
-    <div class="card-group">
+    <div class="row row-cols-1 row-cols-md-2 g-5">
     {% for product in products %}
-        <div class="card ms-3 me-3 border border-dark">
+        <div class="card">
             <div class="card-body">
                 <a href="{% url 'product_view' product.pk %}" class=""><h5 class="card-title">{{ product.name }}</h5></a>
                 <p class="card-text">{{ product.category }}</p>
-                <a href="{% url 'product_delete' product.pk %}">Удалить</a>
-                <a href="{% url 'product_update' product.pk %}">Редактировать</a>
+                <a class="btn btn-secondary" href="{% url 'product_delete' product.pk %}">Удалить</a>
+                <a class="btn btn-secondary" href="{% url 'product_update' product.pk %}">Редактировать</a>
+                <form method="post" action="{% url 'product_add' product.pk%}" >
+                    {% csrf_token %}
+                    <button class="btn btn-secondary">Добавить в корзину</button>
+                </form>
             </div>
             <div class="card-footer">
-                <p class="card-text">{{ product.price }}</p>
+                <p class="card-text">Цена: {{ product.price }}</p>
             </div>
         </div>
     {% endfor %}
     </div>
+<div class="mb-5">
+     {% if is_paginated %}
+        {% include 'partial/pagination.html' %}
+    {% endif %}
+</div>
+
 </div>
 {% endblock %}

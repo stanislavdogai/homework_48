@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Продукт</th>
+      <th scope="col">Цена</th>
+      <th scope="col">Количество</th>
+      <th scope="col">Сумма</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in basket %}
+        <tr>
+            <th scope="row">{{ product.product.name }}</th>
+            <td>{{ product.product.price }}</td>
+            <td>{{ product.amount }}</td>
+            <td>{{ total }}</td>
+            <td><a href="{% url 'basket_delete' product.pk %}"><i class="fas fa-trash-alt"></i></a></td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
