@@ -221,6 +221,487 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2022-02-07T07:03:55.772Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "5 --- ТестИмя",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Products\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2022-02-07T08:21:12.494Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "6",
+    "object_repr": "6 --- asdasd",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Products\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.914Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "12",
+    "object_repr": "Заказ от: 123123, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.916Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "11",
+    "object_repr": "Заказ от: 213123, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.918Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "10",
+    "object_repr": "Заказ от: ыфвфыф, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.919Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "9",
+    "object_repr": "Заказ от: 24123, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.921Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "8",
+    "object_repr": "Заказ от: adsad, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.922Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "7",
+    "object_repr": "Заказ от: wesda, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.924Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "Заказ от: asdsdasdw, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.925Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "Заказ от: asdsdasdw, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.927Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "Заказ от: asdsdasdw, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.928Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "Заказ от: asdsdasdw, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.930Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Заказ от: asdsdasdw, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2022-02-07T09:34:39.931Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Заказ от: asdsdasdw, ",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.035Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "23",
+    "object_repr": "123123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.037Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "22",
+    "object_repr": "123123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.039Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "21",
+    "object_repr": "213123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.040Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "20",
+    "object_repr": "ыфвфыф",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.042Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "19",
+    "object_repr": "24123",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.043Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "18",
+    "object_repr": "adsad",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.045Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "17",
+    "object_repr": "wesda",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.046Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "16",
+    "object_repr": "asdsdasdw",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.048Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "15",
+    "object_repr": "asdsdasdw",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.049Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "14",
+    "object_repr": "asdsdasdw",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.051Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "13",
+    "object_repr": "asdsdasdw",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.052Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "12",
+    "object_repr": "asdsdasdw",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.053Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "11",
+    "object_repr": "asdsdasdw",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.055Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "10",
+    "object_repr": "asdsa",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.056Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "9",
+    "object_repr": "asdsa",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.058Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "8",
+    "object_repr": "12312",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.059Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "7",
+    "object_repr": "adsad",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.061Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "6",
+    "object_repr": "asdasd",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.062Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "ТестИмя",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.064Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "ТестИмя",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.065Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Имя",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.067Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "ss",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2022-02-07T09:35:01.069Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "ss",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -509,6 +990,114 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add Заказ",
+    "content_type": 9,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change Заказ",
+    "content_type": 9,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete Заказ",
+    "content_type": 9,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view Заказ",
+    "content_type": 9,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add Промежуточная",
+    "content_type": 10,
+    "codename": "add_orderbasketproduc"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change Промежуточная",
+    "content_type": 10,
+    "codename": "change_orderbasketproduc"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete Промежуточная",
+    "content_type": 10,
+    "codename": "delete_orderbasketproduc"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view Промежуточная",
+    "content_type": 10,
+    "codename": "view_orderbasketproduc"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add Промежуточная",
+    "content_type": 10,
+    "codename": "add_orderbasketproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change Промежуточная",
+    "content_type": 10,
+    "codename": "change_orderbasketproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete Промежуточная",
+    "content_type": 10,
+    "codename": "delete_orderbasketproduct"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view Промежуточная",
+    "content_type": 10,
+    "codename": "view_orderbasketproduct"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -591,6 +1180,22 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "webapp",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "webapp",
+    "model": "orderbasketproduct"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "dw089qmkpnpqi3oa02x36gfq7sme19t1",
   "fields": {
@@ -611,9 +1216,9 @@
   "pk": 2,
   "fields": {
     "name": "Молоко",
-    "description": "3.2 процента жирности",
+    "description": "3.2 процента жирности!!!",
     "category": "milk",
-    "remainder": 20,
+    "remainder": 19,
     "price": "50.00"
   }
 },
@@ -624,7 +1229,7 @@
     "name": "кефир",
     "description": "",
     "category": "milk",
-    "remainder": 200,
+    "remainder": 198,
     "price": "40.00"
   }
 },
@@ -652,17 +1257,6 @@
 },
 {
   "model": "webapp.product",
-  "pk": 7,
-  "fields": {
-    "name": "Кола",
-    "description": "",
-    "category": "drink",
-    "remainder": 100,
-    "price": "50.00"
-  }
-},
-{
-  "model": "webapp.product",
   "pk": 8,
   "fields": {
     "name": "Стейк",
@@ -673,8 +1267,41 @@
   }
 },
 {
+  "model": "webapp.product",
+  "pk": 9,
+  "fields": {
+    "name": "5 кукуруз только есть",
+    "description": "Бери быстрей",
+    "category": "vegetables",
+    "remainder": 1,
+    "price": "500.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 10,
+  "fields": {
+    "name": "Продукт количество 0",
+    "description": "ццц",
+    "category": "drink",
+    "remainder": 0,
+    "price": "500.00"
+  }
+},
+{
+  "model": "webapp.product",
+  "pk": 11,
+  "fields": {
+    "name": "Курс со скидкой",
+    "description": "",
+    "category": "other",
+    "remainder": 2,
+    "price": "10000.00"
+  }
+},
+{
   "model": "webapp.basket",
-  "pk": 17,
+  "pk": 42,
   "fields": {
     "product": 2,
     "amount": 1
@@ -682,18 +1309,57 @@
 },
 {
   "model": "webapp.basket",
-  "pk": 18,
+  "pk": 43,
   "fields": {
-    "product": 7,
+    "product": 5,
     "amount": 1
   }
 },
 {
-  "model": "webapp.basket",
-  "pk": 19,
+  "model": "webapp.order",
+  "pk": 24,
   "fields": {
-    "product": 5,
+    "name": "Нурбек",
+    "phone": "+996555505555",
+    "address": "Малдыбаева 7/1",
+    "date": "2022-02-07T09:51:01.758Z"
+  }
+},
+{
+  "model": "webapp.order",
+  "pk": 25,
+  "fields": {
+    "name": "Стас",
+    "phone": "5585050502",
+    "address": "Джал",
+    "date": "2022-02-07T10:19:22.799Z"
+  }
+},
+{
+  "model": "webapp.orderbasketproduct",
+  "pk": 13,
+  "fields": {
+    "order": 24,
+    "product": 9,
     "amount": 1
+  }
+},
+{
+  "model": "webapp.orderbasketproduct",
+  "pk": 14,
+  "fields": {
+    "order": 24,
+    "product": 11,
+    "amount": 3
+  }
+},
+{
+  "model": "webapp.orderbasketproduct",
+  "pk": 15,
+  "fields": {
+    "order": 25,
+    "product": 9,
+    "amount": 2
   }
 }
 ]
