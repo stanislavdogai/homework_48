@@ -2,10 +2,10 @@
 {% block title %}Продукты{% endblock %}
 {% block nav %}
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'product_create' %}">Добавить продукт</a>
+        <a class="nav-link" href="{% url 'webapp:product_create' %}">Добавить продукт</a>
     </li>
         <li class="nav-item">
-        <a class="nav-link" href="{% url 'basket' %}">Просмотреть корзину</a>
+        <a class="nav-link" href="{% url 'webapp:basket' %}">Просмотреть корзину</a>
     </li>
 {% endblock %}
 {% block content %}
@@ -23,18 +23,17 @@
     {% for product in products %}
         <div class="card">
             <div class="card-body">
-                <a href="{% url 'product_view' product.pk %}" class=""><h5 class="card-title">{{ product.name }}</h5></a>
+                <a href="{% url 'webapp:product_view' product.pk %}" class=""><h5 class="card-title">{{ product.name }}</h5></a>
                 <p class="card-text">{{ product.get_category_display }}</p>
 
-                <a class="btn btn-secondary" href="{% url 'product_delete' product.pk %}">Удалить</a>
-                <a class="btn btn-secondary" href="{% url 'product_update' product.pk %}">Редактировать</a>
+                <a class="btn btn-secondary" href="{% url 'webapp:product_delete' product.pk %}">Удалить</a>
+                <a class="btn btn-secondary" href="{% url 'webapp:product_update' product.pk %}">Редактировать</a>
                 <p class="mt2">
-                <form method="post" action="{% url 'product_add' product.pk%}" name="count">
+                <form method="post" action="{% url 'webapp:product_add' product.pk%}" name="count">
                     {% csrf_token %}
                     <label for="quantity">Выберите количество:</label>
-                    <input type="number" id="quantity" name="quantity" min="1">
+                    <input type="number" id="quantity" name="quantity" min="1" placeholder="1">
                     <button class="btn btn-secondary" type="submit">Принять</button>
-{#                    <button class="btn btn-secondary mt-2">Добавить в корзину</button>#}
                 </form>
                 </p>
             </div>

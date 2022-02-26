@@ -30,8 +30,10 @@ class BasketView(View):
 
 class ProductAddBasket(View):
     def post(self, request, *args, **kwargs):
-        count = request.POST.get('quantity')
+        count = request.POST.get('quantity', 1)
         product = Product.objects.get(pk=kwargs.get('pk'))
+        if count == '':
+            count = 1
         if Basket.objects.filter(product_id=product.pk):
             basket = Basket.objects.get(product_id=product.pk)
             if product.remainder == basket.amount:
@@ -41,8 +43,8 @@ class ProductAddBasket(View):
                 basket.amount += int(count)
                 basket.save()
         else:
-            Basket.objects.create(product=product, amount=1)
-        return redirect('product_index')
+            Basket.objects.create(product=product, amount=count)
+        return redirect('webapp:product_index')
 
 class BasketProductDelete(View):
     def get(self, request, *args, **kwargs):
@@ -52,10 +54,10 @@ class BasketProductDelete(View):
             basket.save()
         else:
             basket.delete()
-        return redirect('basket')
+        return redirect('webapp:basket')
 
 class BasketProductRemove(View):
     def get(self, request, *args, **kwargs):
         basket = get_object_or_404(Basket, pk=kwargs.get('pk'))
         basket.delete()
-        return redirect('basket')
+        return redirect('webapp:basket')

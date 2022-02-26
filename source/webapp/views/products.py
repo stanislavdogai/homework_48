@@ -36,7 +36,7 @@ class ProductDetailView(DetailView):
 class ProductDeleteView(DeleteView):
     model = Product
     template_name = 'products/delete.html'
-    success_url = reverse_lazy('product_index')
+    success_url = reverse_lazy('webapp:product_index')
 
 
 

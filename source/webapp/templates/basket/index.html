@@ -17,14 +17,18 @@
             <td>{{ product.product.price }}</td>
             <td>{{ product.amount }}</td>
             <td>{{ product.sum_product }}</td>
-            <td><a href="{% url 'basket_delete' product.pk %}"><i class="fas fa-trash-alt"></i></a></td>
-            <td><a href="{% url 'basket_remove' product.pk %}"><i class="fas fa-times-circle"></i></a></td>
+            <td><a href="{% url 'webapp:basket_delete' product.pk %}"><i class="fas fa-trash-alt"></i></a></td>
+            <td><a href="{% url 'webapp:basket_remove' product.pk %}"><i class="fas fa-times-circle"></i></a></td>
         </tr>
     {% endfor %}
   </tbody>
 </table>
+    {% if basket %}
     <h2 class="text-center">Общая сумма заказа составила {{ sum }}</h2>
     <form method="POST">
         {% include 'partial/form.html' with button_text='Оформить заказ' %}
     </form>
+{% else %}
+        <h1 class="text-center">Товаров в корзине нет</h1>
+    {% endif %}
 {% endblock %}

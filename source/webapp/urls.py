@@ -5,6 +5,7 @@ from webapp.views.basket import (BasketView, ProductAddBasket, BasketProductDele
 from webapp.views.products import (ProductIndexView, ProductCreateView, ProductDetailView,
                                    ProductDeleteView, ProductUpdateView, ProductBusketView)
 
+app_name = 'webapp'
 urlpatterns = [
     path('', ProductIndexView.as_view(), name='product_index'),
     path('create/', ProductCreateView.as_view(), name='product_create'),
