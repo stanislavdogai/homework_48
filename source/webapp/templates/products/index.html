@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Продукты{% endblock %}
 {% block nav %}
+    {% if perms.webapp.add_product %}
     <li class="nav-item">
         <a class="nav-link" href="{% url 'webapp:product_create' %}">Добавить продукт</a>
     </li>
+    {% endif %}
         <li class="nav-item">
         <a class="nav-link" href="{% url 'webapp:basket' %}">Просмотреть корзину</a>
     </li>
@@ -25,9 +27,12 @@
             <div class="card-body">
                 <a href="{% url 'webapp:product_view' product.pk %}" class=""><h5 class="card-title">{{ product.name }}</h5></a>
                 <p class="card-text">{{ product.get_category_display }}</p>
-
-                <a class="btn btn-secondary" href="{% url 'webapp:product_delete' product.pk %}">Удалить</a>
-                <a class="btn btn-secondary" href="{% url 'webapp:product_update' product.pk %}">Редактировать</a>
+                {% if perms.webapp.delete_product %}
+                    <a class="btn btn-secondary" href="{% url 'webapp:product_delete' product.pk %}">Удалить</a>
+                {% endif %}
+                {% if perms.webapp.change_product %}
+                    <a class="btn btn-secondary" href="{% url 'webapp:product_update' product.pk %}">Редактировать</a>
+                {% endif %}
                 <p class="mt2">
                 <form method="post" action="{% url 'webapp:product_add' product.pk%}" name="count">
                     {% csrf_token %}
