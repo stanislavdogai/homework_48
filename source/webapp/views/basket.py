@@ -32,9 +32,9 @@ class BasketView(View):
 class ProductAddBasket(View):
     def post(self, request, *args, **kwargs):
         count = request.POST.get('quantity')
-        print(count)
         product = Product.objects.get(pk=kwargs.get('pk'))
-        print(product.remainder)
+        if count == '':
+            count = 1
         if Basket.objects.filter(product_id=product.pk):
             basket = Basket.objects.get(product_id=product.pk)
             if product.remainder <= basket.amount or int(count) >= product.remainder:
@@ -43,6 +43,7 @@ class ProductAddBasket(View):
                 basket = Basket.objects.get(product_id=product.pk)
                 basket.amount += int(count)
                 basket.save()
+                return redirect('webapp:product_index')
         else:
             if int(count) >= product.remainder:
                 return render(request, 'basket/error.html')
@@ -53,7 +54,6 @@ class ProductAddBasket(View):
 
 class BasketProductDelete(View):
     def get(self, request, *args, **kwargs):
-        # request.session['key'] = value
         basket = get_object_or_404(Basket, pk=kwargs.get('pk'))
         if basket.amount > 1:
             basket.amount -= 1

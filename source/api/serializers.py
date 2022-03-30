@@ -6,8 +6,8 @@ from webapp.models import Basket, Product, Order, OrderBasketProduct
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['id', 'name', 'description', 'category', 'remainder', 'price']
-        read_only_fields = ['id']
+        fields = ('id', 'name', 'description', 'category', 'remainder', 'price')
+        read_only_fields = ('id',)
 
 class OrderProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -20,3 +20,9 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = ('id', 'date', 'name', 'phone', 'address', 'orderbasket')
         read_only_fields = ('date', )
+
+class BasketSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Basket
+        fields = ('product', 'amount')
+        # read_only_fields = ('id', )
