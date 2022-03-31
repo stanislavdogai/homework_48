@@ -34,12 +34,11 @@
                     <a class="btn btn-secondary" href="{% url 'webapp:product_update' product.pk %}">Редактировать</a>
                 {% endif %}
                 <p class="mt2">
-                <form method="post" action="{% url 'webapp:product_add' product.pk%}" name="count">
-                    {% csrf_token %}
                     <label for="quantity">Выберите количество:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" placeholder="1">
-                    <button class="btn btn-secondary" type="submit">Принять</button>
-                </form>
+                    <input type=text id="count{{ product.pk }}"  min="1" placeholder="1">
+
+                    <button class="btn btn-secondary" id="btn" onclick="addBasket(event)" data-product-id="{{ product.id }}" data-add-basket-url="{% url 'api:add_product_to_basket' product.id %}">Принять</button>
+
                 </p>
             </div>
             <div class="card-footer">
